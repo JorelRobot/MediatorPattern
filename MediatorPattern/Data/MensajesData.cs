@@ -13,7 +13,9 @@ namespace MediatorPattern.Data
 
         public  List<Mensaje> GetConversation(string emisorId, string receptorId)
         {
-            return mensajes.Where(m => m.EmisorID.Equals(emisorId) && m.ReceptorID.Equals(receptorId)).ToList();
+            List<Mensaje> aux_mensajes = mensajes.Where(m => m.EmisorID.Equals(emisorId) || m.ReceptorID.Equals(emisorId)).ToList();
+
+            return aux_mensajes.Where(m => m.EmisorID.Equals(receptorId) || m.ReceptorID.Equals(receptorId)).ToList();
         }
 
         public void SetMessageOnConversation(string emisorId, string receptorId, string mensaje)

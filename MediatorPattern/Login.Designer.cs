@@ -42,6 +42,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(352, 27);
             this.txtEmail.TabIndex = 0;
+            this.txtEmail.Text = "joel.rueda@email.com";
             // 
             // txtContrasena
             // 
@@ -50,6 +51,7 @@
             this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(352, 27);
             this.txtContrasena.TabIndex = 1;
+            this.txtContrasena.Text = "genericpass";
             // 
             // btnIngresar
             // 

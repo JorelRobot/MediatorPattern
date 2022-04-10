@@ -34,17 +34,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelConversaciones = new System.Windows.Forms.Panel();
+            this.panelMensajes = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblChatFrindName = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMessageToSend = new System.Windows.Forms.TextBox();
             this.panelWelcome = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panelConversaciones.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelWelcome.SuspendLayout();
             this.SuspendLayout();
@@ -106,9 +107,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.panelConversaciones);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtMessageToSend);
             this.panel2.Controls.Add(this.panelWelcome);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(287, 0);
@@ -116,15 +117,24 @@
             this.panel2.Size = new System.Drawing.Size(723, 718);
             this.panel2.TabIndex = 0;
             // 
-            // panel3
+            // panelConversaciones
             // 
-            this.panel3.AutoScroll = true;
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(6, 12);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(705, 636);
-            this.panel3.TabIndex = 2;
+            this.panelConversaciones.AutoScroll = true;
+            this.panelConversaciones.BackColor = System.Drawing.Color.White;
+            this.panelConversaciones.Controls.Add(this.panelMensajes);
+            this.panelConversaciones.Controls.Add(this.panel4);
+            this.panelConversaciones.Location = new System.Drawing.Point(6, 12);
+            this.panelConversaciones.Name = "panelConversaciones";
+            this.panelConversaciones.Size = new System.Drawing.Size(705, 636);
+            this.panelConversaciones.TabIndex = 2;
+            // 
+            // panelMensajes
+            // 
+            this.panelMensajes.AutoScroll = true;
+            this.panelMensajes.Location = new System.Drawing.Point(3, 74);
+            this.panelMensajes.Name = "panelMensajes";
+            this.panelMensajes.Size = new System.Drawing.Size(699, 559);
+            this.panelMensajes.TabIndex = 1;
             // 
             // panel4
             // 
@@ -157,14 +167,15 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Enviar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // txtMessageToSend
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 654);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(567, 52);
-            this.textBox1.TabIndex = 0;
+            this.txtMessageToSend.Location = new System.Drawing.Point(6, 654);
+            this.txtMessageToSend.Multiline = true;
+            this.txtMessageToSend.Name = "txtMessageToSend";
+            this.txtMessageToSend.Size = new System.Drawing.Size(567, 52);
+            this.txtMessageToSend.TabIndex = 0;
             // 
             // panelWelcome
             // 
@@ -200,7 +211,7 @@
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            this.panelConversaciones.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panelWelcome.ResumeLayout(false);
@@ -214,8 +225,8 @@
         private Panel panel1;
         private Panel panel2;
         private Button button1;
-        private TextBox textBox1;
-        private Panel panel3;
+        private TextBox txtMessageToSend;
+        private Panel panelConversaciones;
         private Panel panel4;
         private Label lblChatFrindName;
         private Panel panel5;
@@ -224,5 +235,6 @@
         private Label lblUserName;
         private Panel panelWelcome;
         private Label label2;
+        private Panel panelMensajes;
     }
 }

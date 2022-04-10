@@ -17,6 +17,8 @@ namespace MediatorPattern
         private UsuariosData _usuariosData;
         private MensajesData _mensajesData;
         private Usuario _usersession;
+        private Usuario _selectedFrined = null;
+        private List<Mensaje> _selectedConversation = null;
 
         public Dashboard(Usuario usersession, UsuariosData usuariosData, MensajesData mensajesData)
         {
@@ -63,9 +65,67 @@ namespace MediatorPattern
             lblChatFrindName.Text = card.UserName;
 
             Usuario friend = _usuariosData.getAllUsuarios().Find(u => u.Name.Equals(card.UserName));
-            List<Mensaje> conversacion = _mensajesData.GetConversation(_usersession.Id, friend.Id); 
+            List<Mensaje> conversacion = _mensajesData.GetConversation(_usersession.Id, friend.Id);
+            //conversacion = conversacion.OrderBy(o => o.HoraFechaEnvio).ToList();
+
+            _selectedFrined = friend;
+            _selectedConversation = conversacion;
+
+            SetConversationUp();
 
             panelWelcome.Visible = false;
+        }
+
+        private void SetConversationUp ()
+        {
+            panelMensajes.Controls.Clear();
+            int y_position = 10;
+
+            Usuario friend = _usuariosData.getAllUsuarios().Find(u => u.Name.Equals(_selectedFrined.Name));
+            List<Mensaje> conversacion = _mensajesData.GetConversation(_usersession.Id, friend.Id);
+            //conversacion = conversacion.OrderBy(o => o.HoraFechaEnvio).ToList();
+
+            _selectedFrined = friend;
+            _selectedConversation = conversacion;
+
+            if (_selectedFrined != null || _selectedConversation != null)
+            {
+                if (!_selectedConversation.Count.Equals(0)) { 
+                    foreach (Mensaje mensaje in _selectedConversation)
+                    {
+                        CUMensaje card = new CUMensaje(mensaje, _selectedFrined.Id);
+
+                        if (mensaje.EmisorID.Equals(_usersession.Id))
+                        {
+                            // Emisor Messagge
+                            card.Location = new Point(380, y_position);
+                        }
+                        else
+                        {
+                            // Receptor Messagge
+                            card.Location = new Point(5, y_position);
+                        }
+
+                        card.Visible = true;
+                        panelMensajes.Controls.Add(card);
+                        y_position += 120;
+                    }
+                }
+            }
+
+            panelMensajes.VerticalScroll.Value = panelMensajes.VerticalScroll.Maximum;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtMessageToSend.Text.Length != 0)
+            {
+                _mensajesData.SetMessageOnConversation(_usersession.Id, _selectedFrined.Id, txtMessageToSend.Text);
+
+            }
+
+            SetConversationUp();
+            txtMessageToSend.Clear();
         }
     }
 }
