@@ -34,19 +34,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panelWelcome = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblChatFrindName = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panelWelcome = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panelWelcome.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panelWelcome.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -116,27 +116,9 @@
             this.panel2.Size = new System.Drawing.Size(723, 718);
             this.panel2.TabIndex = 0;
             // 
-            // panelWelcome
-            // 
-            this.panelWelcome.BackColor = System.Drawing.Color.White;
-            this.panelWelcome.Controls.Add(this.label2);
-            this.panelWelcome.Location = new System.Drawing.Point(6, 12);
-            this.panelWelcome.Name = "panelWelcome";
-            this.panelWelcome.Size = new System.Drawing.Size(717, 703);
-            this.panelWelcome.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(68, 326);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(574, 41);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Selecciona a un amigo para poder chatear";
-            // 
             // panel3
             // 
+            this.panel3.AutoScroll = true;
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Location = new System.Drawing.Point(6, 12);
@@ -184,6 +166,25 @@
             this.textBox1.Size = new System.Drawing.Size(567, 52);
             this.textBox1.TabIndex = 0;
             // 
+            // panelWelcome
+            // 
+            this.panelWelcome.BackColor = System.Drawing.Color.White;
+            this.panelWelcome.Controls.Add(this.label2);
+            this.panelWelcome.Location = new System.Drawing.Point(6, 12);
+            this.panelWelcome.Name = "panelWelcome";
+            this.panelWelcome.Size = new System.Drawing.Size(717, 703);
+            this.panelWelcome.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(68, 326);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(574, 41);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Selecciona a un amigo para poder chatear";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -199,11 +200,11 @@
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panelWelcome.ResumeLayout(false);
-            this.panelWelcome.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panelWelcome.ResumeLayout(false);
+            this.panelWelcome.PerformLayout();
             this.ResumeLayout(false);
 
         }
